@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatDelegate;
  */
 public final class AppUiMode {
 
+
     private static Context sContext;
     private static volatile AppUiMode sInstance;
     private static final String KEY_UI_MODE = "ui_mode";
