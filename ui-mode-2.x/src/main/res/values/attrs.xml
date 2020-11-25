@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="UiMode">
+        <attr name="iv_useMaskColor" format="boolean" />
+        <attr name="invalidate" format="boolean" />
+        <!--uiMode忽略的属性，多个属性时属性名之间用'|'分割-->
+        <attr name="uiMode_ignore" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="RatioLayout">
+        <attr name="ratio_w2h" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="MaskImageView">
+        <attr name="maskColor" format="color" />
+        <!--false:遮罩层与原始图片取并集; true:取交集; 默认值false -->
+        <attr name="maskUnion" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="Round">
+        <attr name="radius" format="dimension" />
+        <attr name="radius_leftTop" format="dimension" />
+        <attr name="radius_leftBottom" format="dimension" />
+        <attr name="radius_rightTop" format="dimension" />
+        <attr name="radius_rightBottom" format="dimension" />
+        <attr name="radius_oval" format="boolean" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <!--<attr name="border_overlay" format="boolean" />-->
+    </declare-styleable>
+
+</resources>

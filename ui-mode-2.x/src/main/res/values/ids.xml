@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="tag_ui_mode" type="id" />
+    <item name="tag_ui_mode_mask_drawable" type="id" />
+
+</resources>

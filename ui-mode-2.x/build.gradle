@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+ext {
+    version_code = 301
+    version_name = '3.0.1'
+}
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode version_code
+        versionName version_name
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //修改jar名字+将指定jar生成的地方
+    task makeJar(type:Copy){
+        //如果之前存在，则先删除
+        delete 'build/libs/ui-mode.jar'
+        //设置拷贝的文件
+        from('build/intermediates/packaged-classes/debug/')
+        //生成jar包后的文件目录位置
+        into('build/libs/')
+        //include,exclude参数来设置过滤
+        include('classes.jar')
+        //重命名
+        rename('classes.jar','ui-mode.jar')
+    }
+
+    makeJar.dependsOn(build)
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly deps.androidx.appcompat
+}
+
+
+apply from: "${rootDir}/publish.gradle"
