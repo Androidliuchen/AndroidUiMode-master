@@ -30,7 +30,6 @@ public final class AppUiMode {
         sharedPreferences = sContext.getSharedPreferences("AppUiMode", Activity.MODE_PRIVATE);
         uiMode = sharedPreferences.getInt(KEY_UI_MODE, AppCompatDelegate.MODE_NIGHT_NO);
     }
-
     private void setUiMode(@AppCompatDelegate.NightMode int uiMode) {
         if (this.uiMode != uiMode) {
             this.uiMode = uiMode;
